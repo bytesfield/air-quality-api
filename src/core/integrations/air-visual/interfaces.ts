@@ -1,19 +1,6 @@
-interface Forcasts {
-  ts: string;
-  aqius: number;
-  aqicn: number;
-  tp: number;
-  tp_min: number;
-  pr: number;
-  hu: number;
-  ws: number;
-  wd: number;
-  ic: string;
-}
-
 export interface NearestCityProps {
-  longitude: number;
-  latitude: number;
+  lon: number;
+  lat: number;
 }
 
 export interface NearestCityResponseProps {
@@ -26,6 +13,23 @@ export interface NearestCityResponseProps {
       type: string;
       coordinates: [];
     };
-    forecasts: Forcasts[];
+    current: {
+      pollution: {
+        ts: string;
+        aqius: number;
+        mainus: string;
+        aqicn: number;
+        maincn: string;
+      };
+      weather: {
+        ts: string;
+        tp: number;
+        pr: number;
+        hu: number;
+        ws: number;
+        wd: number;
+        ic: string;
+      };
+    };
   };
 }

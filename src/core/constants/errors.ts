@@ -10,3 +10,7 @@ export enum Errors {
   SERVICE_UNAVAILABLE = 'Service currently unavailable.',
   INVALID_AUTHORIZATION_TOKEN = 'Authorization token is invalid.'
 }
+
+export enum LocationErrors {
+  LOCATION_REQUEST_FAILED = 'Location request failed.'
+}
