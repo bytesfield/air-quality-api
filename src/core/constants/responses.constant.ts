@@ -1,3 +1,3 @@
 export enum ResponseMessages {
-  GET_NEAREST_CITY_SUCCESSFUL = 'Nearest City retrieved successfully'
+  GET_AIR_QUALITY_SUCCESSFUL = 'Air quality retrieved successfully'
 }

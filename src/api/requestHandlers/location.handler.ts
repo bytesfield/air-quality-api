@@ -7,7 +7,7 @@ export const getNearestCity: RequestHandler = async (req, res, next): Promise<an
   try {
     const response = await locationController.getNearestCity(req.params.longitude, req.params.latitude);
 
-    res.json(responseHandler(response, ResponseMessages.GET_NEAREST_CITY_SUCCESSFUL));
+    res.json(responseHandler(response, ResponseMessages.GET_AIR_QUALITY_SUCCESSFUL));
   } catch (error) {
     next(error);
   }
