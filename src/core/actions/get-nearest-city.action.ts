@@ -1,10 +1,10 @@
 import { BadRequestError } from '../errors';
 import { AirVisualIntegration } from '../integrations/air-visual';
 import { NearestCityResponseProps } from '../integrations/air-visual/interfaces';
-import { logger } from '../utils/logger';
+import { logger } from '../utils/logger.util';
 
 export class GetNearestCityAction {
-    
+
     public async execute(longitude: string, latitude: string): Promise<NearestCityResponseProps>  {
         const getAirVisualInstance = (): AirVisualIntegration => {
             return new AirVisualIntegration();

@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import { ValidationError } from 'sequelize';
-import DomainError from '../../core/errors/DomainError';
-import { logger } from '../../core/utils/logger';
-import { Errors } from '../../core/constants/errors';
+import DomainError from '../../core/errors/domain.error';
+import { logger } from '../../core/utils/logger.util';
+import { Errors } from '../../core/constants/errors.constant';
 
 function handleErrors(err: Error, _req: Request, res: Response, _next: NextFunction): Response {
   if (err instanceof DomainError) {

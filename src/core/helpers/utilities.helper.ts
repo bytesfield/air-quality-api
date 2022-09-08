@@ -1,6 +1,6 @@
 import joi, { ValidationErrorItem } from 'joi';
 import { BadRequestError } from '../errors';
-import { Errors } from '../constants/errors';
+import { Errors } from '../constants/errors.constant';
 
 export const responseHandler = (
   payload: { [key: string]: any } | any[],

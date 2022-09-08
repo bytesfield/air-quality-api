@@ -1,26 +1,24 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { WeatherAttributes } from '../interfaces/model';
+import { PollutionAttributes } from '../interfaces/model.interface';
 import { sequelize } from '../database/sequelize';
 
-type CreationAttributes = Optional<WeatherAttributes, 'id'>;
+type CreationAttributes = Optional<PollutionAttributes, 'id'>;
 
-class Weather extends Model<WeatherAttributes, CreationAttributes>
-  implements WeatherAttributes
+class Pollution extends Model<PollutionAttributes, CreationAttributes>
+  implements PollutionAttributes
 {
   id: number;
   location_id?: number;
   ts: string;
-  tp: number;
-  pr: number;
-  hu: number;
-  ws: number;
-  wd: number;
-  ic: string;
+  aqius: number;
+  mainus: string;
+  aqicn: number;
+  maincn: string;
   readonly createdAt: Date;
   readonly updatedAt: Date;
 
   static associate(models: any){
-    Weather.belongsTo(models.locations, {
+    Pollution.belongsTo(models.locations, {
       foreignKey: 'location_id',
       constraints: false,
       as: 'locations'
@@ -28,7 +26,7 @@ class Weather extends Model<WeatherAttributes, CreationAttributes>
   };
 }
 
-Weather.init(
+Pollution.init(
   {
     id: {
       allowNull: false,
@@ -44,37 +42,28 @@ Weather.init(
       allowNull: false,
       type: DataTypes.STRING(100)
     },
-    tp: {
+    aqius: {
       allowNull: false,
       type: DataTypes.INTEGER()
     },
-    pr: {
+    mainus: {
+      allowNull: false,
+      type: DataTypes.STRING(10)
+    },
+    aqicn: {
       allowNull: false,
       type: DataTypes.INTEGER()
     },
-    hu: {
-      allowNull: false,
-      type: DataTypes.INTEGER()
-    },
-    ws: {
-      allowNull: false,
-      type: DataTypes.INTEGER()
-    },
-    wd: {
-      allowNull: false,
-      type: DataTypes.INTEGER()
-    },
-    ic: {
+    maincn: {
       allowNull: false,
       type: DataTypes.STRING(10)
     }
   },
   {
-    tableName: 'weathers',
+    tableName: 'pollutions',
     sequelize
   }
 );
 
-export { Weather };
-
+export { Pollution };
 

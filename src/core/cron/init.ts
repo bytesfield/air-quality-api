@@ -5,7 +5,7 @@ dotenv.config();
 
 import cron from 'node-cron';
 import appConfig from '../config/application';
-import checkAirQuality from './tasks/checkAirQuality';
+import checkAirQuality from './tasks/check-air-quality.task';
 
 const cronConfig = appConfig.cron;
 

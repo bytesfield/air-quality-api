@@ -1,4 +1,4 @@
-import { GetNearestCity } from '../interfaces/location';
+import { GetNearestCity } from '../interfaces/location.interface';
 import { GetNearestCityAction } from '../actions/get-nearest-city.action';
 
 export const getNearestCity = async (longitude: string, latitude: string): Promise<GetNearestCity> => {

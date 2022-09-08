@@ -1,6 +1,6 @@
-import { LocationService } from '../../../core/services/location.service';
-import { logger } from '../../utils/logger';
-import location from '../../../core/static/location.static';
+import { LocationService } from '../../services/location.service';
+import { logger } from '../../utils/logger.util';
+import location from '../../static/location.static';
 
 const handler = async (): Promise<void> => {
   const locationService: LocationService = new LocationService();

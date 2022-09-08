@@ -1,6 +1,6 @@
 import { Transaction, WhereOptions } from 'sequelize';
-import { LocationAttributes } from '../interfaces/model';
-import { Location } from '../models/locations';
+import { LocationAttributes } from '../interfaces/model.interface';
+import { Location } from '../models/locations.model';
 
 export const createLocation= (payload: LocationAttributes,dbTransaction?: Transaction): Promise<LocationAttributes> => {
   return Location.create(payload, { ...(dbTransaction && { transaction: dbTransaction }) });

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import * as locationRequestHandler from '../requestHandlers/location';
+import * as locationRequestHandler from '../requestHandlers/location.handler';
 
 const router = Router();
 

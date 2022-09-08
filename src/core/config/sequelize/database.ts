@@ -1,4 +1,4 @@
-import { logger } from '../../../core/utils/logger';
+import { logger } from '../../utils/logger.util';
 
 const sequelizeConfig = {
   host: process.env.MYSQL_DATABASE_HOST || '127.0.0.1',

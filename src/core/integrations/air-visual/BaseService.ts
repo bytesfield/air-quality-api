@@ -1,4 +1,4 @@
-import { HttpClient } from '../../utils/httpClient';
+import { HttpClient } from '../../utils/http-client.util';
 
 interface RequestDataProps {
   url: string;

@@ -1,8 +1,8 @@
 import axios from 'axios';
 import https from 'https';
-import { logger } from './logger';
+import { logger } from './logger.util';
 import { ServiceUnavailableError } from '../errors';
-import { Errors } from '../constants/errors';
+import { Errors } from '../constants/errors.constant';
 
 interface Props {
   baseUrl: string;

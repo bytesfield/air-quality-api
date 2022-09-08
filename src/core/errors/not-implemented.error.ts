@@ -1,5 +1,5 @@
-import DomainError from './DomainError';
-import { Errors } from '../constants/errors';
+import DomainError from './domain.error';
+import { Errors } from '../constants/errors.constant';
 
 export default class NotImplementedError extends DomainError {
   protected error_name = 'not_implemented';

@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 /* eslint-disable import/first */
 import morgan from 'morgan';
-import { handleErrors } from './api/middlewares/handleErrors';
-import { logger } from './core/utils/logger';
-import { Errors } from './core/constants/errors';
+import { handleErrors } from './api/middlewares/handleErrors.middleware';
+import { logger } from './core/utils/logger.util';
+import { Errors } from './core/constants/errors.constant';
 import { routes } from './api/routes';
 
 const app = express();

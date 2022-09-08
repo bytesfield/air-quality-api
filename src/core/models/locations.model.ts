@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { LocationAttributes } from '../interfaces/model';
+import { LocationAttributes } from '../interfaces/model.interface';
 import { sequelize } from '../database/sequelize';
 
 type CreationAttributes = Optional<LocationAttributes, 'id'>;

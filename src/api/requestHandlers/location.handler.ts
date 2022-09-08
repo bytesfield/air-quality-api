@@ -1,7 +1,7 @@
 import { RequestHandler } from 'express';
-import { responseHandler } from '../../core/helpers/utilities';
-import * as locationController from '../../core/controllers/location';
-import { ResponseMessages } from '../../core/constants/responses';
+import { responseHandler } from '../../core/helpers/utilities.helper';
+import * as locationController from '../../core/controllers/location.controller';
+import { ResponseMessages } from '../../core/constants/responses.constant';
 
 export const getNearestCity: RequestHandler = async (req, res, next): Promise<any> => {
   try {
