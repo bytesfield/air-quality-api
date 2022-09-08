@@ -19,6 +19,7 @@ function handleErrors(err: Error, _req: Request, res: Response, _next: NextFunct
   }
 
   logger.error('[Unhandled Error] => ', err);
+
   return res.status(500).send({
     status: false,
     error: 'server_error',

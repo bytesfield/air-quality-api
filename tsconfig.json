@@ -1,4 +1,9 @@
 {
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
@@ -10,7 +15,6 @@
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "rootDir": ".",
     "allowJs": true,
     "types": ["jest", "node"],
     "paths": {

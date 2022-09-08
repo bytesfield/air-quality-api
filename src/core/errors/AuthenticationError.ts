@@ -6,7 +6,12 @@ export default class AuthenticationError extends DomainError {
 
   protected httpCode = 401;
 
-  public constructor(message: string = Errors.NOT_AUTHENTICATED, error: Error = undefined, data: any = null, success = false) {
+  public constructor(
+    message: string = Errors.NOT_AUTHENTICATED,
+    error: Error = undefined,
+    data: any = null,
+    success = false
+  ) {
     super(message, error, data, success);
     Error.captureStackTrace(this, this.constructor);
   }

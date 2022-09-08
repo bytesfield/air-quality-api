@@ -6,7 +6,12 @@ export default class BadRequestError extends DomainError {
 
   protected httpCode = 400;
 
-  public constructor(message: string = Errors.BAD_REQUEST, error: Error = undefined, data: any = null, success = false) {
+  public constructor(
+    message: string = Errors.BAD_REQUEST,
+    error: Error = undefined,
+    data: any = null,
+    success = false
+  ) {
     super(message, error, data, success);
     Error.captureStackTrace(this, this.constructor);
   }

@@ -6,7 +6,12 @@ export default class NotImplementedError extends DomainError {
 
   protected httpCode = 501;
 
-  public constructor(message: string = Errors.NOT_IMPLEMENTED, error: Error = undefined, data: any = null, success = false) {
+  public constructor(
+    message: string = Errors.NOT_IMPLEMENTED,
+    error: Error = undefined,
+    data: any = null,
+    success = false
+  ) {
     super(message, error, data, success);
     Error.captureStackTrace(this, this.constructor);
   }
