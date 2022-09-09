@@ -1,7 +1,7 @@
-import { GetNearestCity } from '../interfaces/location.interface';
+import { GetAirQuality } from '../interfaces/location.interface';
 import { GetNearestCityAction } from '../actions/get-nearest-city.action';
 
-export const getNearestCity = async (longitude: string, latitude: string): Promise<GetNearestCity> => {
+export const getAirQuality = async (longitude: string, latitude: string): Promise<GetAirQuality> => {
   const getNearestCityAction: GetNearestCityAction = new GetNearestCityAction();
 
     const responseData = await getNearestCityAction.execute(longitude, latitude);

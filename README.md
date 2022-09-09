@@ -38,6 +38,52 @@ To run the application, use the command: `npm run start:dev`
 
 It is important to set up environment variables for the system to function properly
 
+## Usage
+
+- Register on “iqair” and create your API KEY (https://www.iqair.com/fr/dashboard/api )
+- NOTE: the activation of the key can take a few minutes (about 5 minutes).
+- On your `.env` replace   `<YOUR API KEY>` with your generated API Key.
+`AIR_VISUAL_API_KEY=<YOUR API KEY>`
+
+Start your node js server and call this endpoint 
+`/v1/location/nearest-city?longitude=2.352222&latitude=48.856613` [GET]
+
+Expected Success Response (200)
+
+```bash
+{
+    "status": true,
+    "message": "Air quality retrieved successfully",
+    "data": {
+        "Result": {
+            "Pollution": {
+                "ts": "2022-09-09T06:00:00.000Z",
+                "aqius": 51,
+                "mainus": "p2",
+                "aqicn": 17,
+                "maincn": "p2"
+            }
+        }
+    }
+}
+```
+
+Network Error (503)
+```bash
+{
+    "status": false,
+    "error": "bad_request",
+    "message": "Location request failed.",
+    "data": {
+        "gateway_response": "getaddrinfo ENOTFOUND api.airvisual.com"
+    }
+}
+```
+
+To run the cron job, use the command: `npm run cron:dev`
+This will execute the cron task that calls the IQAIR API to get “air quality “ for the Paris zone ( latitude:
+48.856613 ,longitude: 2.352222) every 1 minute then save them in the database.
+
 #### Logging
 
 Sometimes, it's necessary to send logs to the stdout or store them, to do this, make use of the exported [logger](src/core/utils/logger)
@@ -50,13 +96,10 @@ You can log errors based on their levels:
 
 -   info
 
--   verbose
-
 -   debug
 
--   silly
 
-Example: `logger.error('You just committed a crime!')`
+Example: `logger.error('This is an error!')`
 
 Ensure you avoid using `console.log` statements anywhere in the code.
 
@@ -80,7 +123,7 @@ If you discover any security related issues, please email abrahamudele@gmail ins
 
 -   [Abraham Udele](https://github.com/bytesfield) <br/>
 Find me on
-<a href="https://twitter.com/mr_udele/">Twitter.</a>
+<a href="https://twitter.com/mr_udele/">Twitter.</a> <br/>
 <a href="https://www.linkedin.com/in/abrahamudele/">Linkedin.</a>
 
 ## License

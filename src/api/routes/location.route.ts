@@ -3,6 +3,6 @@ import * as locationRequestHandler from '../requestHandlers/location.handler';
 
 const router = Router();
 
-router.get('/nearest-city', locationRequestHandler.getNearestCity);
+router.get('/air-quality', locationRequestHandler.getAirQuality);
 
 export { router as locationRoutes };

@@ -6,6 +6,7 @@ import staticData from '../../src/core/static/location.static';
 
 const testCase = new TestCase();
 const urlPrefix = '/v1/location';
+const airQualityUrl = 'air-quality';
 
 const coordinates = {
   longitude: 2.352222,
@@ -54,7 +55,7 @@ describe("Test Location", () => {
     });
 
     const response = await testCase.request
-      .get(`${urlPrefix}/nearest-city?longitude=${coordinates.longitude}&latitude=${coordinates.latitude}`)
+      .get(`${urlPrefix}/${airQualityUrl}?longitude=${coordinates.longitude}&latitude=${coordinates.latitude}`)
       .expect(200);
 
     expect(response.body.status).toBe(true);
@@ -73,7 +74,7 @@ describe("Test Location", () => {
     });
 
     const response = await testCase.request
-      .get(`${urlPrefix}/nearest-city?longitude=${coordinates.longitude}&latitude=${coordinates.latitude}`)
+      .get(`${urlPrefix}/${airQualityUrl}?longitude=${coordinates.longitude}&latitude=${coordinates.latitude}`)
       .expect(400);
 
     expect(response.body.status).toBe(false);

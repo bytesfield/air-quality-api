@@ -1,4 +1,4 @@
-export interface GetNearestCity {
+export interface GetAirQuality {
   Result: {
     Pollution: {
       ts: string;
