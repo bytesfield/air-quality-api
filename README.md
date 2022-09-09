@@ -156,7 +156,7 @@ If you discover any security related issues, please email abrahamudele@gmail ins
 ## Credits
 
 -   [Abraham Udele](https://github.com/bytesfield) <br/>
-Find me on
+Find me on <br/>
 <a href="https://twitter.com/mr_udele/">Twitter.</a> <br/>
 <a href="https://www.linkedin.com/in/abrahamudele/">Linkedin.</a>
 
