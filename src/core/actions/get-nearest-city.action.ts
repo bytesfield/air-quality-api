@@ -1,3 +1,4 @@
+import { LocationErrors } from '../constants/errors.constant';
 import { BadRequestError } from '../errors';
 import { AirVisualIntegration } from '../integrations/air-visual';
 import { NearestCityResponseProps } from '../integrations/air-visual/interfaces';
@@ -22,7 +23,7 @@ export class GetNearestCityAction {
           } catch (error) {
             logger.error('[Error air visual get nearest city] => ', error);
         
-            throw new BadRequestError('Location request failed.', null, {
+            throw new BadRequestError(LocationErrors.LOCATION_REQUEST_FAILED, null, {
               gateway_response: error.message,
               status: error.status
             });

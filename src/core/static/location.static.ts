@@ -6,34 +6,34 @@ export default {
     }
   },
  getNearestCitySuccessResponse: {
-    status: "success",
+    status: 'success',
     data: {
-      city: "Makurdi",
-        state: "Benue",
-        country: "Nigeria",
-        location: {
-          type: "Point",
-          coordinates: [
-            7.95407,
-            9.87342
-          ]
-        },
+      city: 'Makurdi',
+      state: 'Benue',
+      country: 'Nigeria',
+      location: {
+        type: 'Point',
+        coordinates: [
+          7.95407,
+          9.87342
+        ]
+      },
       current: {
         pollution: {
-          ts: "2022-09-08T12:00:00.000Z",
+          ts: '2022-09-08T12:00:00.000Z',
           aqius: 50,
-          mainus: "p2",
+          mainus: 'p2',
           aqicn: 24,
-          maincn: "p2"
+          maincn: 'p2'
         },
         weather: {
-          ts: "2022-09-08T14:00:00.000Z",
+          ts: '2022-09-08T14:00:00.000Z',
           tp: 25,
           pr: 1010,
           hu: 78,
           ws: 2.83,
           wd: 218,
-          ic: "04d"
+          ic: '04d'
         }
       }
     }
@@ -43,5 +43,33 @@ export default {
     error: 'bad_request',
     message: 'Location request failed.',
     gateway_response: 'getaddrinfo ENOTFOUND api.airvisual.com'
+  },
+  findLocationResponse: {
+    id: 1,
+    city: 'Makurdi',
+    state: 'Benue',
+    country: 'Nigeria',
+    type: 'Point',
+    coordinates: '7.95407, 9.87342'    
+  },
+  findPollutionResponse: {
+    id: 1,
+    location_id: 1,
+    ts: '2022-09-08T12:00:00.000Z',
+    aqius: 50,
+    mainus: 'p2',
+    aqicn: 24,
+    maincn: 'p2'    
+  },
+  findWeatherResponse: {
+    id: 1,
+    location_id: 1,
+    ts: '2022-09-08T14:00:00.000Z',
+    tp: 25,
+    pr: 1010,
+    hu: 78,
+    ws: 2.83,
+    wd: 218,
+    ic: '04d'    
   }
 };

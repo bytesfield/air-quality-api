@@ -45,30 +45,3 @@ const getErrMessage = (item: ValidationErrorItem): string => {
   }
   return message;
 };
-
-const buildErrorObject = (errors: ValidationErrorItem[]): Partial<{ message: string; customErrorMessage: string }> => {
-  const customErrors: any = {};
-  errors.forEach((item) => {
-    if (!Object.prototype.hasOwnProperty.call(customErrors, item.path.join('.'))) {
-      const customErrorMessage = getErrMessage(item);
-
-      customErrors[item.path.join('.')] = {
-        message: item.message.replace(/['"]+/g, ''),
-        customErrorMessage
-      };
-    }
-  });
-
-  return customErrors;
-};
-
-export const validate = <T>(request: { [key: string]: any }, schema: joi.ObjectSchema<any>): T => {
-  const validation = schema.validate(request, { abortEarly: false });
-  const { value, error } = validation;
-
-  if (error) {
-    throw new BadRequestError(Errors.BAD_REQUEST, undefined, buildErrorObject(error.details));
-  }
-
-  return value;
-};
