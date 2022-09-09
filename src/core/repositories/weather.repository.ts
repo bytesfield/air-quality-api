@@ -2,7 +2,7 @@ import { Transaction, WhereOptions } from 'sequelize';
 import { WeatherAttributes } from '../interfaces/model.interface';
 import { Weather } from '../models/weathers.model';
 
-export const createWeather= (payload: WeatherAttributes,dbTransaction?: Transaction): Promise<WeatherAttributes> => {
+export const createWeather = (payload: WeatherAttributes, dbTransaction?: Transaction): Promise<WeatherAttributes> => {
   return Weather.create(payload, { ...(dbTransaction && { transaction: dbTransaction }) });
 };
 

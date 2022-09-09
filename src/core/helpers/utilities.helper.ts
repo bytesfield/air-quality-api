@@ -2,10 +2,7 @@ import joi, { ValidationErrorItem } from 'joi';
 import { BadRequestError } from '../errors';
 import { Errors } from '../constants/errors.constant';
 
-export const responseHandler = (
-  payload: { [key: string]: any } | any[],
-  message = 'success'
-): { status: boolean; message: string; data: any } => {
+export const responseHandler = (payload: { [key: string]: any } | any[], message = 'success'): { status: boolean; message: string; data: any } => {
   return {
     status: true,
     message,

@@ -4,9 +4,7 @@ import { sequelize } from '../database/sequelize';
 
 type CreationAttributes = Optional<WeatherAttributes, 'id'>;
 
-class Weather extends Model<WeatherAttributes, CreationAttributes>
-  implements WeatherAttributes
-{
+class Weather extends Model<WeatherAttributes, CreationAttributes> implements WeatherAttributes {
   id: number;
   location_id?: number;
   ts: string;
@@ -19,13 +17,13 @@ class Weather extends Model<WeatherAttributes, CreationAttributes>
   readonly createdAt: Date;
   readonly updatedAt: Date;
 
-  static associate(models: any){
+  static associate(models: any) {
     Weather.belongsTo(models.locations, {
       foreignKey: 'location_id',
       constraints: true,
       as: 'locations'
     });
-  };
+  }
 }
 
 Weather.init(
@@ -76,5 +74,3 @@ Weather.init(
 );
 
 export { Weather };
-
-

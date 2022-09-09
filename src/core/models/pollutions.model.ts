@@ -4,9 +4,7 @@ import { sequelize } from '../database/sequelize';
 
 type CreationAttributes = Optional<PollutionAttributes, 'id'>;
 
-class Pollution extends Model<PollutionAttributes, CreationAttributes>
-  implements PollutionAttributes
-{
+class Pollution extends Model<PollutionAttributes, CreationAttributes> implements PollutionAttributes {
   id: number;
   location_id?: number;
   ts: string;
@@ -17,13 +15,13 @@ class Pollution extends Model<PollutionAttributes, CreationAttributes>
   readonly createdAt: Date;
   readonly updatedAt: Date;
 
-  static associate(models: any){
+  static associate(models: any) {
     Pollution.belongsTo(models.locations, {
       foreignKey: 'location_id',
       constraints: true,
       as: 'locations'
     });
-  };
+  }
 }
 
 Pollution.init(
@@ -66,4 +64,3 @@ Pollution.init(
 );
 
 export { Pollution };
-

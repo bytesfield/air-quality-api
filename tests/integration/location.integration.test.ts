@@ -1,11 +1,11 @@
-import { TestCase } from "../test-case";
+import { TestCase } from '../test-case';
 import * as AirVisualIntegration from '../../src/core/integrations/air-visual';
 jest.mock('../../src/core/utils/logger.util.ts');
 import { sequelize } from '../../src/core/database/sequelize';
 import staticData from '../../src/core/static/location.static';
-import * as locationRepository from "../../src/core/repositories/location.repository";
-import * as pollutionRepository from "../../src/core/repositories/pollution.repository";
-import * as weatherRepository from "../../src/core/repositories/weather.repository";
+import * as locationRepository from '../../src/core/repositories/location.repository';
+import * as pollutionRepository from '../../src/core/repositories/pollution.repository';
+import * as weatherRepository from '../../src/core/repositories/weather.repository';
 
 const testCase = new TestCase();
 const urlPrefix = '/v1/location';
@@ -30,7 +30,7 @@ beforeEach(() => {
   airVisualIntegrationMock = jest.spyOn(AirVisualIntegration, 'AirVisualIntegration');
   findlocationMock = jest.spyOn(locationRepository, 'findLocation');
   findMostPollutedMock = jest.spyOn(pollutionRepository, 'findMostPolluted');
-  
+
   sequelize.transaction = jest.fn().mockImplementation(async (cb) => {
     await cb('');
   });
@@ -40,7 +40,7 @@ afterEach(() => {
   airVisualIntegrationMock.mockReset();
 });
 
-describe("Test Get Air Quality", () => {
+describe('Test Get Air Quality', () => {
   beforeEach(() => {
     airVisualIntegrationMock.mockImplementation((): any => {
       return {
@@ -92,14 +92,12 @@ describe("Test Get Air Quality", () => {
   });
 });
 
-describe("Test Get Most Polluted Time", () => {
+describe('Test Get Most Polluted Time', () => {
   test('can get paris most polluted time', async () => {
     findlocationMock.mockImplementation(() => Promise.resolve(findLocationResponse));
     findMostPollutedMock.mockImplementation(() => Promise.resolve(findPollutionResponse));
 
-    const response = await testCase.request
-      .get(`${urlPrefix}/${mostPollutedUrl}`)
-      .expect(200);
+    const response = await testCase.request.get(`${urlPrefix}/${mostPollutedUrl}`).expect(200);
 
     expect(response.body.status).toBe(true);
     expect(response.body.message).toBe('Most polluted time retrieved successfully');

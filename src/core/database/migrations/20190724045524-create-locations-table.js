@@ -19,7 +19,7 @@ module.exports = {
       },
       country: {
         type: Sequelize.STRING(50),
-        allowNull: false,
+        allowNull: false
       },
       type: {
         type: Sequelize.STRING(50),
@@ -28,7 +28,7 @@ module.exports = {
       coordinates: {
         type: Sequelize.STRING(50),
         allowNull: false,
-        unique: true,
+        unique: true
       },
       created_at: {
         allowNull: false,

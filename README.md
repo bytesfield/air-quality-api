@@ -112,11 +112,11 @@ Expected Success Response (200)
 ```
 
 OR Check out the postman documentation here
-[POSTMAN DOCUMENETATION](https://documenter.getpostman.com/view/10912779/VVBZSkTX)
+[POSTMAN DOCUMENTATION](https://documenter.getpostman.com/view/10912779/VVBZSkTX)
 
 To run the cron job, use the command: `npm run cron:dev`
 This will execute the cron task that calls the IQAIR API to get “air quality “ for the Paris zone ( latitude:
-48.856613 ,longitude: 2.352222) every 1 minute then save them in the database.
+`48.856613` ,longitude: `2.352222`) every 1 minute then save them in the database.
 
 #### Logging
 

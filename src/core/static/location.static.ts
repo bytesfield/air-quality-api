@@ -5,7 +5,7 @@ export default {
       latitude: '48.856613'
     }
   },
- getNearestCitySuccessResponse: {
+  getNearestCitySuccessResponse: {
     status: 'success',
     data: {
       city: 'Makurdi',
@@ -13,10 +13,7 @@ export default {
       country: 'Nigeria',
       location: {
         type: 'Point',
-        coordinates: [
-          7.95407,
-          9.87342
-        ]
+        coordinates: [7.95407, 9.87342]
       },
       current: {
         pollution: {
@@ -50,7 +47,7 @@ export default {
     state: 'Benue',
     country: 'Nigeria',
     type: 'Point',
-    coordinates: '7.95407, 9.87342'    
+    coordinates: '7.95407, 9.87342'
   },
   findPollutionResponse: {
     id: 1,
@@ -59,7 +56,7 @@ export default {
     aqius: 50,
     mainus: 'p2',
     aqicn: 24,
-    maincn: 'p2'    
+    maincn: 'p2'
   },
   findWeatherResponse: {
     id: 1,
@@ -70,6 +67,6 @@ export default {
     hu: 78,
     ws: 2.83,
     wd: 218,
-    ic: '04d'    
+    ic: '04d'
   }
 };

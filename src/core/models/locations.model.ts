@@ -4,9 +4,7 @@ import { sequelize } from '../database/sequelize';
 
 type CreationAttributes = Optional<LocationAttributes, 'id'>;
 
-class Location extends Model<LocationAttributes, CreationAttributes>
-  implements LocationAttributes
-{
+class Location extends Model<LocationAttributes, CreationAttributes> implements LocationAttributes {
   id: number;
   city: string;
   state: string;
@@ -45,7 +43,7 @@ Location.init(
     coordinates: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      unique: true,
+      unique: true
     }
   },
   {
@@ -68,5 +66,3 @@ Location.associate = (models: any): any => {
 };
 
 export { Location };
-
-

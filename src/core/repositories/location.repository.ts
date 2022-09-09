@@ -2,18 +2,15 @@ import { Transaction, WhereOptions } from 'sequelize';
 import { LocationAttributes } from '../interfaces/model.interface';
 import { Location } from '../models/locations.model';
 
-export const createLocation= (payload: LocationAttributes,dbTransaction?: Transaction): Promise<LocationAttributes> => {
+export const createLocation = (payload: LocationAttributes, dbTransaction?: Transaction): Promise<LocationAttributes> => {
   return Location.create(payload, { ...(dbTransaction && { transaction: dbTransaction }) });
 };
 
-export const createOrUpdateLocation = async (
-    payload: LocationAttributes,
-    dbTransaction?: Transaction
-  ): Promise<LocationAttributes> => {
-    const [log] = await Location.upsert(payload, { returning: true, ...(dbTransaction && { transaction: dbTransaction }) });
-  
-    return log;
-  };
+export const createOrUpdateLocation = async (payload: LocationAttributes, dbTransaction?: Transaction): Promise<LocationAttributes> => {
+  const [log] = await Location.upsert(payload, { returning: true, ...(dbTransaction && { transaction: dbTransaction }) });
+
+  return log;
+};
 
 export const findLocation = (whereOptions: WhereOptions<LocationAttributes>): Promise<LocationAttributes | null> => {
   return Location.findOne({ where: whereOptions });
