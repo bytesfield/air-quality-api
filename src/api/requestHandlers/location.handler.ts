@@ -12,3 +12,13 @@ export const getAirQuality: RequestHandler = async (req, res, next): Promise<any
     next(error);
   }
 };
+
+export const getMostPollutedTime: RequestHandler = async (req, res, next): Promise<any> => {
+  try {
+    const response = await locationController.getMostPollutedTime(req.params.longitude, req.params.latitude);
+
+    res.json(responseHandler(response, ResponseMessages.GET_MOST_POLLUTED_SUCCESSFUL));
+  } catch (error) {
+    next(error);
+  }
+};

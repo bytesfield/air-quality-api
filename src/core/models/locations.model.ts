@@ -15,19 +15,7 @@ class Location extends Model<LocationAttributes, CreationAttributes>
   coordinates: string;
   readonly createdAt: Date;
   readonly updatedAt: Date;
-
-  static associate(models: any){
-      Location.hasMany(models.pollutions, {
-        foreignKey: 'location_id',
-        constraints: false,
-        as: 'pollutions'
-      });
-      Location.hasMany(models.weathers, {
-        foreignKey: 'location_id',
-        constraints: false,
-        as: 'weathers'
-      });
-  };
+  static associate: (models: any) => any;
 }
 
 Location.init(
@@ -65,6 +53,19 @@ Location.init(
     sequelize
   }
 );
+
+Location.associate = (models: any): any => {
+  Location.hasMany(models.pollutions, {
+    foreignKey: 'location_id',
+    constraints: true,
+    as: 'pollutions'
+  });
+  Location.hasMany(models.weathers, {
+    foreignKey: 'location_id',
+    constraints: true,
+    as: 'weathers'
+  });
+};
 
 export { Location };
 

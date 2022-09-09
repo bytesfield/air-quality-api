@@ -22,7 +22,7 @@ class Weather extends Model<WeatherAttributes, CreationAttributes>
   static associate(models: any){
     Weather.belongsTo(models.locations, {
       foreignKey: 'location_id',
-      constraints: false,
+      constraints: true,
       as: 'locations'
     });
   };

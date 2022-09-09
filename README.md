@@ -46,6 +46,8 @@ It is important to set up environment variables for the system to function prope
 `AIR_VISUAL_API_KEY=<YOUR API KEY>`
 
 Start your node js server and call this endpoint 
+
+- GET AIR QUALITY
 `/v1/location/nearest-city?longitude=2.352222&latitude=48.856613` [GET]
 
 Expected Success Response (200)
@@ -76,6 +78,35 @@ Network Error (503)
     "message": "Location request failed.",
     "data": {
         "gateway_response": "getaddrinfo ENOTFOUND api.airvisual.com"
+    }
+}
+```
+
+- MOST POLLUTED TIME (PARIS - DEFAULT)
+`/v1/location/most-polluted-time` [GET]
+
+Expected Success Response (200)
+
+```bash
+{
+    "status": true,
+    "message": "Most polluted time retrieved successfully",
+    "data": {
+        "time": "2022-09-08T14:49:01.000Z"
+    }
+}
+```
+- MOST POLLUTED TIME (AMY COODINATE)
+`/v1/location/most-polluted-time?longitude=2.352222&latitude=48.856613` [GET]
+
+Expected Success Response (200)
+
+```bash
+{
+    "status": true,
+    "message": "Most polluted time retrieved successfully",
+    "data": {
+        "time": "2022-09-08T14:49:01.000Z"
     }
 }
 ```

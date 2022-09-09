@@ -20,7 +20,7 @@ class Pollution extends Model<PollutionAttributes, CreationAttributes>
   static associate(models: any){
     Pollution.belongsTo(models.locations, {
       foreignKey: 'location_id',
-      constraints: false,
+      constraints: true,
       as: 'locations'
     });
   };
