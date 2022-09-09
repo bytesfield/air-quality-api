@@ -1,6 +1,6 @@
 ## Air Quality API
 
-This is the Cellulant Card Service
+This gets the air quality information of a nearest city using the GPS coordinates with iqair API
 
 ## Setup
 
