@@ -45,7 +45,9 @@ It is important to set up environment variables for the system to function prope
 - On your `.env` replace   `<YOUR API KEY>` with your generated API Key.
 `AIR_VISUAL_API_KEY=<YOUR API KEY>`
 
-Start your node js server and call this endpoint 
+Start your node js server and call these endpoints
+
+[POSTMAN DOCUMENTATION HERE](https://documenter.getpostman.com/view/10912779/VVBZSkTX)
 
 - GET AIR QUALITY ENDPOINT
 `/v1/location/nearest-city?longitude=2.352222&latitude=48.856613` [GET]
@@ -110,9 +112,6 @@ Expected Success Response (200)
     }
 }
 ```
-
-OR Check out the postman documentation here
-[POSTMAN DOCUMENTATION](https://documenter.getpostman.com/view/10912779/VVBZSkTX)
 
 To run the cron job, use the command: `npm run cron:dev`
 This will execute the cron task that calls the IQAIR API to get “air quality “ for the Paris zone ( latitude:
